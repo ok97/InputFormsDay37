@@ -1,6 +1,21 @@
-html, input {
+html, input 
+{
     font-family: sans-serif;
   }
+   /* UC6:- Responsive Design & Media Queries */
+ @media only screen and (max-width:360px)
+ {
+  h1
+  {
+      font-size: 40px;
+      text-align: center;
+  }
+  label
+  {
+      width:40%;
+      font-size: 13px;
+  }
+}
 
   .headerContainer
 {
