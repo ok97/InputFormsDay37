@@ -65,15 +65,18 @@ text.addEventListener('input', function ()
 
          /* UC4:- As a User need to follow pre-defined Password rules. 
                   Rule1 – minimum 8 Characters - NOTE – All rules must be passed.
-            
+            UC5:- Rule1 – minimum 8 Characters. 
+                  Rule2 – Should have at least 1 Upper Case.
+                  Rule3 – Should have at least 1 numeric number in the password.
+                  Rule4 – Has exactly 1 Special Character - NOTE – All rules must be passed.
          */
 
           const password = document.querySelector("#pwd");
           const errorPwd = document.querySelector(".pwd-error");
           password.addEventListener('input', function () 
           {
-            let pwdRegex = RegExp("^.{8,}$");
-              if (pwdRegex.test(password.value))
+            let pwdRegex = RegExp("^(?=.*[A-Z])(?=.*[0-9])(?=.*[^0-9a-zA-Z])(?!.*[^0-9a-zA-Z].*[^0-9a-zA-Z]).{8,}$");
+            if (pwdRegex.test(password.value))
             {
                errorPwd.textContent = "";
             }
